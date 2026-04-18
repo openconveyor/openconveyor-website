@@ -1,0 +1,22 @@
+---
+import FlowDiagram from "./FlowDiagram.astro";
+---
+
+<section id="how" class="border-t border-[color:var(--border)] scroll-mt-20">
+  <div class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+    <div class="max-w-2xl">
+      <p class="text-xs font-mono uppercase tracking-wider text-[color:var(--accent)]">How it works</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-[color:var(--text)]">
+        One resource in. One disposable pod out.
+      </h2>
+      <p class="mt-4 text-lg text-[color:var(--text-muted)] leading-relaxed">
+        The whole system is a single custom resource — <span class="font-mono text-[color:var(--text)]">Task</span> — and
+        a controller that turns it into hardened, short-lived Kubernetes primitives.
+      </p>
+    </div>
+
+    <div class="mt-12">
+      <FlowDiagram />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+const cases = [
+  {
+    tag: "Trigger: GitHub",
+    title: "Fix a bug from an issue",
+    body: "An issue gets labeled <code>agent-fix</code>. A Task is created with exactly the secrets needed to clone, push, and open a PR — nothing else.",
+  },
+  {
+    tag: "Trigger: Linear",
+    title: "Close a ticket overnight",
+    body: "A Linear webhook fires on a tagged ticket. The agent works while you're asleep; you wake up to a diff to review, not a running process to babysit.",
+  },
+  {
+    tag: "Trigger: Cron",
+    title: "Nightly dependency upgrade",
+    body: "A CronTask runs at 03:00, pinned to your registry's egress, reads a single token, opens a PR, and gets garbage-collected before breakfast.",
+  },
+];
+---
+
+<section class="border-t border-[color:var(--border)]">
+  <div class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+    <div class="max-w-2xl">
+      <p class="text-xs font-mono uppercase tracking-wider text-[color:var(--accent)]">In practice</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-[color:var(--text)]">
+        Three ways people are kicking it off.
+      </h2>
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {cases.map((c) => (
+        <article class="rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 transition hover:border-[color:var(--accent)]/40 flex flex-col">
+          <div class="h-16 w-16 -ml-1 text-[color:var(--accent)]">
+            <img src="/logo-robot.svg" alt="" width="64" height="64" class="h-full w-full" />
+          </div>
+          <p class="mt-2 font-mono text-[11px] uppercase tracking-wider text-[color:var(--accent)]">{c.tag}</p>
+          <h3 class="mt-2 text-lg font-semibold text-[color:var(--text)]">{c.title}</h3>
+          <p class="mt-2 text-sm text-[color:var(--text-muted)] leading-relaxed [&_code]:font-mono [&_code]:text-[color:var(--text)] [&_code]:bg-[color:var(--accent)]/10 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded" set:html={c.body}></p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

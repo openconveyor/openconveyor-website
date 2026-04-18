@@ -1,0 +1,99 @@
+@import "@fontsource-variable/inter/index.css";
+@import "@fontsource-variable/jetbrains-mono/index.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+
+  --bg: #0a0a0b;
+  --surface: rgba(17, 24, 39, 0.6);
+  --border: rgba(30, 41, 59, 0.8);
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent: #79c0ff;
+  --accent-soft: #b9d9ff;
+  --warm: #f5b041;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #fafafa;
+  --surface: rgba(255, 255, 255, 0.7);
+  --border: rgba(226, 232, 240, 1);
+  --text: #0f172a;
+  --text-muted: #475569;
+  --accent: #3f8fd9;
+  --accent-soft: #2563eb;
+  --warm: #b7791f;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "InterVariable", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(1200px 600px at 85% -20%, rgba(121, 192, 255, 0.08), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(121, 192, 255, 0.05), transparent 60%),
+    var(--bg);
+}
+
+[data-theme="light"] body {
+  background:
+    radial-gradient(1200px 600px at 85% -20%, rgba(63, 143, 217, 0.08), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(63, 143, 217, 0.04), transparent 60%),
+    var(--bg);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--text);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0.5rem;
+  background: var(--accent);
+  color: #0a0a0b;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+}
+
+@keyframes beltScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-16px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,30 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[color:var(--border)]">
+  <div class="mx-auto max-w-6xl px-6 py-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+    <div class="flex items-center gap-2.5">
+      <img src="/logo.svg" alt="" width="28" height="28" class="h-7 w-7" />
+      <div>
+        <p class="text-sm font-semibold text-[color:var(--text)]">openconveyor</p>
+        <p class="text-xs text-[color:var(--text-muted)]">Apache 2.0 · Alpha</p>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+      <a href="https://github.com/openconveyor/openconveyor" target="_blank" rel="noopener" class="text-[color:var(--text-muted)] hover:text-[color:var(--accent)] transition-colors">GitHub</a>
+      <a href="https://github.com/openconveyor/openconveyor#readme" target="_blank" rel="noopener" class="text-[color:var(--text-muted)] hover:text-[color:var(--accent)] transition-colors">README</a>
+      <a href="https://github.com/openconveyor/openconveyor/blob/main/LICENSE" target="_blank" rel="noopener" class="text-[color:var(--text-muted)] hover:text-[color:var(--accent)] transition-colors">License</a>
+      <a href="https://www.mrcontainer.nl/" target="_blank" rel="noopener" class="text-[color:var(--text-muted)] hover:text-[color:var(--accent)] transition-colors">
+        Built by Martijn Scholten
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-[color:var(--border)]">
+    <div class="mx-auto max-w-6xl px-6 py-4 text-xs text-[color:var(--text-muted)]">
+      © {year} OpenConveyor contributors.
+    </div>
+  </div>
+</footer>

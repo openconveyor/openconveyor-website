@@ -1,0 +1,105 @@
+---
+---
+<div class="relative w-full max-w-4xl mx-auto">
+  <svg
+    viewBox="0 0 800 220"
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-full h-auto"
+    role="img"
+    aria-label="Flow diagram: trigger fires, operator creates a Task, Task runs as a hardened Job"
+  >
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#79c0ff" fill-opacity="0.7"/>
+      </marker>
+    </defs>
+
+    <!-- Edges -->
+    <path class="edge" d="M 214 110 L 322 110" marker-end="url(#arrow)" />
+    <path class="edge" d="M 474 110 L 582 110" marker-end="url(#arrow)" />
+
+    <!-- Animated dots (SVG-native motion, works everywhere) -->
+    <circle r="4" fill="#79c0ff" class="flow-dot">
+      <animateMotion dur="2.4s" repeatCount="indefinite" path="M 214 110 L 318 110" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2.4s" repeatCount="indefinite" />
+    </circle>
+    <circle r="4" fill="#79c0ff" class="flow-dot">
+      <animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M 474 110 L 578 110" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Node 1: Trigger -->
+    <g>
+      <rect x="30" y="60" width="180" height="100" rx="12" class="node-bg"/>
+      <text x="120" y="98" text-anchor="middle" class="node-title">Trigger</text>
+      <text x="120" y="122" text-anchor="middle" class="node-sub">GitHub · Linear</text>
+      <text x="120" y="140" text-anchor="middle" class="node-sub">Cron · Slash command</text>
+    </g>
+
+    <!-- Node 2: Task CRD -->
+    <g>
+      <rect x="330" y="60" width="140" height="100" rx="12" class="node-bg node-accent"/>
+      <text x="400" y="98" text-anchor="middle" class="node-title node-title-accent">Task</text>
+      <text x="400" y="122" text-anchor="middle" class="node-sub">CRD reconciled by</text>
+      <text x="400" y="140" text-anchor="middle" class="node-sub">the operator</text>
+    </g>
+
+    <!-- Node 3: Hardened Job -->
+    <g>
+      <rect x="590" y="60" width="180" height="100" rx="12" class="node-bg"/>
+      <text x="680" y="98" text-anchor="middle" class="node-title">Hardened Job</text>
+      <text x="680" y="122" text-anchor="middle" class="node-sub">Least-privilege pod</text>
+      <text x="680" y="140" text-anchor="middle" class="node-sub">Auto-GC on completion</text>
+    </g>
+  </svg>
+
+  <div class="mt-6 grid gap-4 sm:grid-cols-3 text-sm">
+    <div>
+      <p class="font-semibold text-[color:var(--text)]">A trigger fires</p>
+      <p class="text-[color:var(--text-muted)] mt-1">A GitHub issue, a Linear ticket, a cron schedule, or a slash command.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-[color:var(--text)]">The operator creates a Task</p>
+      <p class="text-[color:var(--text-muted)] mt-1">One CRD describes the agent, prompt, and exactly what it's allowed to reach.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-[color:var(--text)]">The Task runs, then vanishes</p>
+      <p class="text-[color:var(--text-muted)] mt-1">A one-shot Pod under restricted PSS runs the agent and cleans itself up.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .node-bg {
+    fill: color-mix(in srgb, var(--surface) 100%, transparent);
+    stroke: var(--border);
+    stroke-width: 1;
+  }
+  .node-accent {
+    stroke: color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  .node-title {
+    fill: var(--text);
+    font-family: "InterVariable", system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .node-title-accent {
+    fill: var(--accent);
+  }
+  .node-sub {
+    fill: var(--text-muted);
+    font-family: "InterVariable", system-ui, sans-serif;
+    font-size: 12px;
+  }
+  .edge {
+    fill: none;
+    stroke: #79c0ff;
+    stroke-opacity: 0.55;
+    stroke-width: 2;
+    stroke-dasharray: 5 5;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .flow-dot { display: none; }
+  }
+</style>

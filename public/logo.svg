@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-label="OpenConveyor">
+  <g stroke="#cdd9e5" fill="none" stroke-width="7">
+    <circle cx="40" cy="200" r="20"/>
+    <circle cx="216" cy="200" r="20"/>
+    <line x1="40" y1="180" x2="216" y2="180"/>
+    <line x1="40" y1="220" x2="216" y2="220"/>
+  </g>
+  <g stroke="#79c0ff" fill="none">
+    <line x1="72" y1="98" x2="72" y2="108"/>
+    <rect x="54" y="108" width="36" height="30" rx="6"/>
+    <line x1="68" y1="138" x2="68" y2="146"/>
+    <line x1="76" y1="138" x2="76" y2="146"/>
+    <rect x="58" y="146" width="28" height="22" rx="3"/>
+    <line x1="128" y1="98" x2="128" y2="108"/>
+    <rect x="110" y="108" width="36" height="30" rx="6"/>
+    <line x1="124" y1="138" x2="124" y2="146"/>
+    <line x1="132" y1="138" x2="132" y2="146"/>
+    <rect x="114" y="146" width="28" height="22" rx="3"/>
+    <line x1="184" y1="98" x2="184" y2="108"/>
+    <rect x="166" y="108" width="36" height="30" rx="6"/>
+    <line x1="180" y1="138" x2="180" y2="146"/>
+    <line x1="188" y1="138" x2="188" y2="146"/>
+    <rect x="170" y="146" width="28" height="22" rx="3"/>
+  </g>
+  <g fill="#79c0ff" stroke="none">
+    <circle cx="72" cy="96" r="3"/>
+    <circle cx="66" cy="122" r="2.5"/>
+    <circle cx="78" cy="122" r="2.5"/>
+    <circle cx="128" cy="96" r="3"/>
+    <circle cx="122" cy="122" r="2.5"/>
+    <circle cx="134" cy="122" r="2.5"/>
+    <circle cx="184" cy="96" r="3"/>
+    <circle cx="178" cy="122" r="2.5"/>
+    <circle cx="190" cy="122" r="2.5"/>
+  </g>
+  <g stroke="#79c0ff" fill="none" stroke-width="5">
+    <path d="M 66 128 Q 72 132 78 128"/>
+    <path d="M 122 128 Q 128 132 134 128"/>
+    <path d="M 178 128 Q 184 132 190 128"/>
+  </g>
+</svg>
