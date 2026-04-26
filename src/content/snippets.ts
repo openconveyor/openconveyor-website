@@ -18,7 +18,7 @@ spec:
 `;
 
 export const installSnippet = `# Install the operator
-kubectl apply -k github.com/openconveyor/openconveyor/config/default
+kubectl apply -f https://github.com/openconveyor/openconveyor/releases/download/v0.1.0/install.yaml
 
 # Apply a Task
 kubectl apply -f task.yaml
