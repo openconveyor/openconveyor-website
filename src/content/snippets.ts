@@ -10,6 +10,8 @@ spec:
   permissions:
     secrets:
       - anthropic-api-key
+      # 60m GitHub App installation token,
+      # minted by External Secrets, not a PAT
       - github-token
     egress:
       - api.anthropic.com

@@ -8,12 +8,12 @@ const pillars = [
   {
     word: "Zero",
     title: "Zero RBAC unless asked",
-    body: "The agent's ServiceAccount starts with no cluster permissions. If the Task needs to apply manifests, you declare a Role and the operator binds it — minimally.",
+    body: "The agent's ServiceAccount starts with no cluster permissions. If the Task needs to apply manifests, you declare a Role and the operator binds it, minimally.",
   },
   {
     word: "Read",
     title: "Secrets are read-only files",
-    body: "Listed secrets project as read-only files on a tmpfs volume. Not environment variables. Not something the agent can enumerate or leak through process listings.",
+    body: "Listed secrets project as read-only files on a tmpfs volume. Not environment variables. Not something the agent can enumerate or leak through process listings. Pairs naturally with short-lived credentials, such as GitHub App tokens minted by External Secrets and rotated every 20 minutes.",
   },
 ];
 ---
@@ -42,6 +42,9 @@ const pillars = [
       collection, is in the
       <a class="text-[color:var(--accent)] hover:underline underline-offset-4" href="https://github.com/openconveyor/openconveyor#security-model" target="_blank" rel="noopener">
         README security section
+      </a>. For rotating agent credentials, see the
+      <a class="text-[color:var(--accent)] hover:underline underline-offset-4" href="https://github.com/openconveyor/openconveyor/blob/main/docs/enterprise-auth.md" target="_blank" rel="noopener">
+        enterprise auth guide
       </a>.
     </p>
   </div>

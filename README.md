@@ -1,6 +1,6 @@
 # openconveyor-website
 
-Marketing site for [OpenConveyor](https://github.com/openconveyor/openconveyor) — a Kubernetes-native orchestrator for AI coding agents.
+Marketing site for [OpenConveyor](https://github.com/openconveyor/openconveyor), a Kubernetes-native orchestrator for AI coding agents.
 
 Built with Astro + Tailwind, hosted on Vercel.
 
