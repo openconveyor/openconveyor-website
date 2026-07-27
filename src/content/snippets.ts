@@ -20,7 +20,11 @@ spec:
 `;
 
 export const installSnippet = `# Install the operator
-kubectl apply -f https://github.com/openconveyor/openconveyor/releases/download/v0.1.0/install.yaml
+kubectl apply -f https://github.com/openconveyor/openconveyor/releases/download/v0.2.0/install.yaml
+
+# Or install via Helm
+helm install conveyor oci://ghcr.io/openconveyor/charts/conveyor \\
+  --version 0.2.0 --namespace conveyor-system --create-namespace
 
 # Apply a Task
 kubectl apply -f task.yaml
