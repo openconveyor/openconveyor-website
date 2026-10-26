@@ -16,7 +16,10 @@ spec:
     egress:
       - api.anthropic.com
       - api.github.com
-  timeout: 20m
+  resources:
+    cpu: "1"
+    memory: 1Gi
+    timeout: 20m
 `;
 
 export const installSnippet = `# Install the operator
