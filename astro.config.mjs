@@ -8,6 +8,7 @@ export default defineConfig({
   site: "https://openconveyor.ai",
   integrations: [sitemap(), icon()],
   output: "static",
+  compressHTML: true,
   adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
