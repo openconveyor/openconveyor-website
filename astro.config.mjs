@@ -1,12 +1,16 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import vercel from "@astrojs/vercel";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://openconveyor.ai",
-  integrations: [tailwind({ applyBaseStyles: false }), sitemap(), icon()],
+  integrations: [sitemap(), icon()],
   output: "static",
+  compressHTML: true,
   adapter: vercel(),
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

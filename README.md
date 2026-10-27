@@ -7,7 +7,7 @@ Built with Astro + Tailwind, hosted on Vercel.
 ## Local dev
 
 ```bash
-nvm use            # Node 20
+nvm use            # Node 24 (>= 24.22.1)
 npm install
 npm run dev        # http://localhost:4321
 ```
